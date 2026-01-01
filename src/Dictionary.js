@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 import "./Dictionary.css"
 import axios from "axios";
+import Results from "./Results";
 
 
 function Dictionary(){
 const [text, setText] = useState("") // state drži ono što je u inputu
+const[results, setResults] = useState({})
 
 // riješi submit forme, ovdje ide API
 function search(event) {
@@ -17,7 +19,7 @@ function search(event) {
 }
 
 function handleResponse(response) {
-    console.log(response.data[0])
+    setResults(response.data[0]);
 }
 
 // prati vrijednosti koje se upisuju u input polje od strane korisnika i ažurira ih
@@ -33,6 +35,7 @@ function handleChange(event) {
             onChange={handleChange} 
             autoFocus={true} />
         </form>
+        <Results results={results}/>
      </div>
     )
 }
