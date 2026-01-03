@@ -16,9 +16,11 @@ function Meaning(props) {
               <strong>Example:</strong>
               <em>{definition.example}</em>
             </p>
-            <strong>Synonyms: </strong>
-            <Synonyms synonyms={definition.synonyms}/>
+      
+          <strong>Synonyms: </strong> 
+          <Synonyms synonyms={definition.synonyms}/>
           </div>
+          
         );
       })}
     </div>

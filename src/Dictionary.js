@@ -11,7 +11,7 @@ const [results, setResults] = useState({})
 // riješi submit forme, ovdje ide API
 function search(event) {
     event.preventDefault() //sprječava refresh
-    alert(`Searching for ${text} definition`) // tu da se prikaže text
+    //alert(`Searching for ${text} definition`) // tu da se prikaže text
 
 
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${text}`
@@ -19,7 +19,7 @@ function search(event) {
 }
 
 function handleResponse(response) {
-    console.log(response.data[0]);
+    //console.log(response.data[0]);
     setResults(response.data[0])
 }
 
