@@ -1,31 +1,20 @@
 import React from "react";
-import "./Results.css"
+import Meaning from "./Meaning";
 
-function Results(props) {
-console.log(props.results)
-if(!props.results) {
-    return null
-} else {  
-    return (
-        <div className="Results">
-    <h1>{props.results.word}</h1>
-    <h3>
-       Definition is:
-       </h3>
-       <p>
-       {props.results.meanings?.[0]?.definitions?.[0]?.definition}
-      </p>
-    
-<h3>Example:</h3> 
-    <p>{props.results.meanings?.[0]?.definitions?.[0]?.example}</p>
+export default function Results(props) {
+  if (!props.results  || !props.results.meanings) {
+    return null;
+  }
 
+  return (
+    <div className="Results">
+      <h3>
+        {props.results.word}
+      </h3>
 
-        </div>
-    )
+      {props.results.meanings.map(function (meaning, index) {
+        return <Meaning key={index} meaning={meaning} />;
+      })}
+    </div>
+  );
 }
-
-}
-
-  
-
-export default Results

@@ -6,7 +6,7 @@ import Results from "./Results";
 
 function Dictionary(){
 const [text, setText] = useState("") // state drži ono što je u inputu
-const[results, setResults] = useState({})
+const [results, setResults] = useState({})
 
 // riješi submit forme, ovdje ide API
 function search(event) {
@@ -19,7 +19,8 @@ function search(event) {
 }
 
 function handleResponse(response) {
-    setResults(response.data[0]);
+    console.log(response.data[0]);
+    setResults(response.data[0])
 }
 
 // prati vrijednosti koje se upisuju u input polje od strane korisnika i ažurira ih
