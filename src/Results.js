@@ -9,7 +9,7 @@ import Phonetic from "./Phonetic";
 
   return (
     <div className="Results">
-      <h3>
+      <h3 className="text-uppercase fs-1 mt-3 mb-3 text-center">
         {props.results.word}
       </h3>
       {props.results.phonetics.map(function(phonetic, index){

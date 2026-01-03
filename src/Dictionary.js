@@ -36,7 +36,9 @@ function handleChange(event) {
             onChange={handleChange} 
             autoFocus={true} />
         </form>
+        <div className="results-dictionary">
         <Results results={results}/>
+        </div>
      </div>
     )
 }
