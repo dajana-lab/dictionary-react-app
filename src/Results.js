@@ -1,7 +1,7 @@
 import React from "react";
 import Meaning from "./Meaning";
 
-export default function Results(props) {
+ function Results(props) {
   if (!props.results  || !props.results.meanings) {
     return null;
   }
@@ -18,3 +18,4 @@ export default function Results(props) {
     </div>
   );
 }
+export default Results
